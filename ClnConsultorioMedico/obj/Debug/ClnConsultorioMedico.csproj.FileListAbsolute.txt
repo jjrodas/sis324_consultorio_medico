@@ -1,0 +1,15 @@
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\ClnConsultorioMedico.dll.config
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\ClnConsultorioMedico.dll
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\ClnConsultorioMedico.pdb
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\CadConsultorioMedico.dll
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\EntityFramework.dll
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\CadConsultorioMedico.pdb
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\CadConsultorioMedico.dll.config
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\EntityFramework.xml
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\obj\Debug\ClnConsultorioMedico.csproj.AssemblyReference.cache
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\obj\Debug\ClnConsultorioMedico.csproj.CoreCompileInputs.cache
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\obj\Debug\ClnConsultorioMedico.csproj.CopyComplete
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\obj\Debug\ClnConsultorioMedico.dll
+C:\Users\jota\Desktop\Consultorio Medico\ClnConsultorioMedico\obj\Debug\ClnConsultorioMedico.pdb
