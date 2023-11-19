@@ -30,6 +30,7 @@ namespace CpConsultorioMedico
             dgvListaPacientes.Columns["apellidos"].HeaderText = "Apellidos";
             dgvListaPacientes.Columns["direccion"].HeaderText = "Dirección";
             dgvListaPacientes.Columns["telefono"].HeaderText = "N° de Teléfono";
+            dgvListaPacientes.Columns["sexo"].HeaderText = "Sexo";
             dgvListaPacientes.Columns["fechaNacimiento"].HeaderText = "Fecha de nacimineto";
             dgvListaPacientes.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvListaPacientes.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
@@ -112,7 +113,7 @@ namespace CpConsultorioMedico
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Size = new Size(961, 390);
+            Size = new Size(916, 390);
             limpiar();
         }
 
@@ -196,7 +197,7 @@ namespace CpConsultorioMedico
                 }
                 listar();
                 btnCancelar.PerformClick();
-                MessageBox.Show("Paciene registrado correctamente", "::: Consultorio Médico - Mensaje :::",
+                MessageBox.Show("Paciente registrado correctamente", "::: Consultorio Médico - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

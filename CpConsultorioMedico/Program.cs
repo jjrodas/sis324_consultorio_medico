@@ -16,7 +16,7 @@ namespace CpConsultorioMedico
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPaciente());
+            Application.Run(new FrmMedico());
         }
     }
 }

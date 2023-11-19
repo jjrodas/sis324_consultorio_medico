@@ -19,3 +19,4 @@ C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsult
 C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.csproj.CopyComplete
 C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.exe
 C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.pdb
+C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.FrmMedico.resources
