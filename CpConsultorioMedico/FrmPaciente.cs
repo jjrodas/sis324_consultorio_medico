@@ -53,21 +53,21 @@ namespace CpConsultorioMedico
 
         private void FrmPaciente_Load(object sender, EventArgs e)
         {
-            Size = new Size(916, 390);
+            Size = new Size(916, 359);
             listar();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             esNuevo = true;
-            Size = new Size(916, 593);
+            Size = new Size(916, 554);
             txtCedulaIdentidad.Focus();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             esNuevo = false;
-            Size = new Size(916, 593);
+            Size = new Size(916, 554);
 
             int index = dgvListaPacientes.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvListaPacientes.Rows[index].Cells["id"].Value);
@@ -115,7 +115,7 @@ namespace CpConsultorioMedico
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Size = new Size(916, 390);
+            Size = new Size(916, 359);
             limpiar();
         }
 
@@ -213,6 +213,16 @@ namespace CpConsultorioMedico
         {
             Visible = false;
             new FrmMedico(frmprincipal).ShowDialog();
+        }
+
+        private void ptbMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ptbCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

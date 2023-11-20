@@ -54,6 +54,7 @@
     <Compile Include="MedicoCln.cs" />
     <Compile Include="PacienteCln.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioCln.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

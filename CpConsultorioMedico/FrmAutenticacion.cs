@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClnConsultorioMedico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,13 +20,51 @@ namespace CpConsultorioMedico
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Visible = false;
-            new FrmPrincipal(this).ShowDialog();
+            if (validar())
+            {
+                var usuario = UsuarioCln.validar(txtUsuario.Text, (txtClave.Text));
+                if (usuario != null)
+                {
+                    txtClave.Text = string.Empty;
+                    txtUsuario.Focus();
+                    txtUsuario.SelectAll();
+                    Visible = false;
+                    new FrmPrincipal(this).ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos",
+                        "::: Consultorio Médico - Mensaje :::", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private bool validar()
+        {
+            bool esValido = true;
+            erpUsuario.SetError(txtUsuario, "");
+            erpClave.SetError(txtClave, "");
+            if (string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                erpUsuario.SetError(txtUsuario, "El campo usuario es obligatorio.");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(txtClave.Text))
+            {
+                erpClave.SetError(txtClave, "El campo contraseña es obligatorio.");
+                esValido = false;
+            }
+            return esValido;
+        }
+
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter) btnIngresar.PerformClick();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaciente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -368,8 +368,8 @@
             this.dgvListaPacientes.Name = "dgvListaPacientes";
             this.dgvListaPacientes.ReadOnly = true;
             this.dgvListaPacientes.RowHeadersVisible = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvListaPacientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvListaPacientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPacientes.Size = new System.Drawing.Size(683, 182);
             this.dgvListaPacientes.TabIndex = 0;
@@ -468,6 +468,7 @@
             this.ptbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbMinimizar.TabIndex = 1;
             this.ptbMinimizar.TabStop = false;
+            this.ptbMinimizar.Click += new System.EventHandler(this.ptbMinimizar_Click);
             // 
             // ptbCerrar
             // 
@@ -479,6 +480,7 @@
             this.ptbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbCerrar.TabIndex = 0;
             this.ptbCerrar.TabStop = false;
+            this.ptbCerrar.Click += new System.EventHandler(this.ptbCerrar_Click);
             // 
             // pnlMenuVertical
             // 
@@ -600,6 +602,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.txtParametro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Pacientes - Consultorio Médico :::";

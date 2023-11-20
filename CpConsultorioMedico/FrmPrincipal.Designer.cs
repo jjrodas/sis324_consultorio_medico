@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCerrar)).BeginInit();
@@ -54,6 +55,7 @@
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.pnlBarraTitulo.Controls.Add(this.label1);
             this.pnlBarraTitulo.Controls.Add(this.ptbMinimizar);
             this.pnlBarraTitulo.Controls.Add(this.ptbCerrar);
             this.pnlBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -214,6 +216,17 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "::: Principal - Consultorio Médico :::";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,11 +235,13 @@
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlMenuVertical);
             this.Controls.Add(this.pnlBarraTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Consultorio Médico :::";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.pnlBarraTitulo.ResumeLayout(false);
+            this.pnlBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCerrar)).EndInit();
             this.pnlMenuVertical.ResumeLayout(false);
@@ -252,5 +267,6 @@
         private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnMedicos;
+        private System.Windows.Forms.Label label1;
     }
 }
