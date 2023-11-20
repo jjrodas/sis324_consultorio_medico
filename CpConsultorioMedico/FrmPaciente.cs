@@ -25,7 +25,7 @@ namespace CpConsultorioMedico
             dgvListaPacientes.DataSource = pacientes;
             dgvListaPacientes.Columns["id"].Visible = false;
             dgvListaPacientes.Columns["estado"].Visible = false;
-            dgvListaPacientes.Columns["cedulaIdentidad"].HeaderText = "Cédula de Identidad";
+            dgvListaPacientes.Columns["cedulaIdentidad"].HeaderText = "CI";
             dgvListaPacientes.Columns["nombres"].HeaderText = "Nombres";
             dgvListaPacientes.Columns["apellidos"].HeaderText = "Apellidos";
             dgvListaPacientes.Columns["direccion"].HeaderText = "Dirección";
@@ -181,7 +181,7 @@ namespace CpConsultorioMedico
                 paciente.telefono = Convert.ToInt32(txtTelefono.Text);
                 paciente.sexo = cbxSexo.Text.Trim();
                 paciente.fechaNacimiento = dtpFechaNacimiento.Value;
-                paciente.usuarioRegistro = "LabSIS457";
+                paciente.usuarioRegistro = "UsrSIS324";
 
                 if (esNuevo)
                 {
