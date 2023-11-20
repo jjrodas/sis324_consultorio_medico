@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaciente));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -65,6 +66,7 @@
             this.erpSexo = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpFechaNacimiento = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ptbMinimizar = new System.Windows.Forms.PictureBox();
             this.ptbCerrar = new System.Windows.Forms.PictureBox();
             this.pnlMenuVertical = new System.Windows.Forms.Panel();
@@ -75,7 +77,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbxDatos.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
             this.gbxListaPacientes.SuspendLayout();
@@ -367,6 +368,8 @@
             this.dgvListaPacientes.Name = "dgvListaPacientes";
             this.dgvListaPacientes.ReadOnly = true;
             this.dgvListaPacientes.RowHeadersVisible = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvListaPacientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPacientes.Size = new System.Drawing.Size(683, 182);
             this.dgvListaPacientes.TabIndex = 0;
@@ -443,6 +446,17 @@
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
             this.pnlBarraTitulo.Size = new System.Drawing.Size(900, 38);
             this.pnlBarraTitulo.TabIndex = 48;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(24, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "::: Pacientes - Consultorio Médico :::";
             // 
             // ptbMinimizar
             // 
@@ -533,6 +547,7 @@
             this.btnMedicos.TabIndex = 3;
             this.btnMedicos.Text = "Médicos";
             this.btnMedicos.UseVisualStyleBackColor = false;
+            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
             // 
             // panel1
             // 
@@ -571,17 +586,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "::: Pacientes - Consultorio Médico :::";
-            // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,6 +603,7 @@
             this.Name = "FrmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Pacientes - Consultorio Médico :::";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPaciente_FormClosing);
             this.Load += new System.EventHandler(this.FrmPaciente_Load);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();

@@ -21,3 +21,4 @@ C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsult
 C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.pdb
 C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.FrmMedico.resources
 C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.FrmPrincipal.resources
+C:\Users\jota\Desktop\Consultorio Medico\CpConsultorioMedico\obj\Debug\CpConsultorioMedico.FrmAutenticacion.resources

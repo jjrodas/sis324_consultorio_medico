@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedico));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.txtMatriculaProfesional = new System.Windows.Forms.TextBox();
             this.lblMatriculaProfesional = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.erpMatriculaProfesional = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpFechaNacimiento = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.ptbMinimizar = new System.Windows.Forms.PictureBox();
             this.ptbCerrar = new System.Windows.Forms.PictureBox();
             this.pnlMenuVertical = new System.Windows.Forms.Panel();
@@ -78,7 +80,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbxDatos.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
             this.gbxListaPacientes.SuspendLayout();
@@ -384,15 +385,17 @@
             this.dgvListaMedicos.AllowUserToResizeRows = false;
             this.dgvListaMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaMedicos.Location = new System.Drawing.Point(7, 22);
+            this.dgvListaMedicos.Location = new System.Drawing.Point(7, 18);
             this.dgvListaMedicos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaMedicos.MultiSelect = false;
             this.dgvListaMedicos.Name = "dgvListaMedicos";
             this.dgvListaMedicos.ReadOnly = true;
             this.dgvListaMedicos.RowHeadersVisible = false;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvListaMedicos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaMedicos.Size = new System.Drawing.Size(680, 178);
-            this.dgvListaMedicos.TabIndex = 0;
+            this.dgvListaMedicos.Size = new System.Drawing.Size(683, 182);
+            this.dgvListaMedicos.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -470,6 +473,17 @@
             this.pnlBarraTitulo.Name = "pnlBarraTitulo";
             this.pnlBarraTitulo.Size = new System.Drawing.Size(900, 38);
             this.pnlBarraTitulo.TabIndex = 55;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(267, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "::: Médicos - Consultorio Médico :::";
             // 
             // ptbMinimizar
             // 
@@ -586,6 +600,7 @@
             this.btnPacientes.TabIndex = 1;
             this.btnPacientes.Text = "Pacientes";
             this.btnPacientes.UseVisualStyleBackColor = false;
+            this.btnPacientes.Click += new System.EventHandler(this.btnPacientes_Click);
             // 
             // pictureBox1
             // 
@@ -597,17 +612,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "::: Médicos - Consultorio Médico :::";
             // 
             // FrmMedico
             // 
@@ -626,6 +630,7 @@
             this.Name = "FrmMedico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Médicos - Consultorio Médico :::";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMedico_FormClosing);
             this.Load += new System.EventHandler(this.FrmMedico_Load);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
@@ -676,7 +681,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox gbxListaPacientes;
-        private System.Windows.Forms.DataGridView dgvListaMedicos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtParametro;
@@ -702,5 +706,6 @@
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvListaMedicos;
     }
 }

@@ -14,10 +14,12 @@ namespace CpConsultorioMedico
 {
     public partial class FrmMedico : Form
     {
+        FrmPrincipal frmPrincipal;
         bool esNuevo = false;
-        public FrmMedico()
+        public FrmMedico(FrmPrincipal frmPrincipal)
         {
             InitializeComponent();
+            this.frmPrincipal = frmPrincipal;
         }
         private void listar()
         {
@@ -205,6 +207,17 @@ namespace CpConsultorioMedico
                 MessageBox.Show("Médico registrado correctamente", "::: Consultorio Médico - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FrmMedico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmPrincipal.Visible = true;
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            new FrmPaciente(frmPrincipal).ShowDialog();
         }
     }
 }

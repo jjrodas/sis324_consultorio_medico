@@ -12,9 +12,11 @@ namespace CpConsultorioMedico
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        FrmAutenticacion frmAutenticacion;
+        public FrmPrincipal(FrmAutenticacion frmAutenticacion)
         {
             InitializeComponent();
+            this.frmAutenticacion = frmAutenticacion;
         }
 
         private void ptbMinimizar_Click(object sender, EventArgs e)
@@ -29,12 +31,19 @@ namespace CpConsultorioMedico
 
         private void btnPacientes_Click(object sender, EventArgs e)
         {
-            new FrmPaciente().ShowDialog();
+            Visible = false;
+            new FrmPaciente(this).ShowDialog();
         }
 
         private void btnMedicos_Click(object sender, EventArgs e)
         {
-            new FrmMedico().ShowDialog();
+            Visible = false;
+            new FrmMedico(this).ShowDialog();
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmAutenticacion.Visible = true;
         }
     }
 }
