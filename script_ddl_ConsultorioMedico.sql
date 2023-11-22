@@ -21,10 +21,10 @@ CREATE TABLE Paciente (
   cedulaIdentidad VARCHAR(15) NOT NULL,
   nombres VARCHAR(40) NOT NULL,
   apellidos VARCHAR(40) NOT NULL,
+  edad INT NOT NULL,
   direccion VARCHAR(100) NOT NULL,
   telefono INT NOT NULL,
   sexo VARCHAR(2) NOT NULL,
-  fechaNacimiento DATE NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1,
@@ -38,7 +38,6 @@ CREATE TABLE Medico (
   telefono INT NOT NULL,
   sexo VARCHAR(2) NOT NULL,
   matriculaProfesional VARCHAR(10) NOT NULL,
-  fechaNacimiento DATE NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1
@@ -47,8 +46,11 @@ CREATE TABLE Cita (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
   idPaciente INT NOT NULL,
   idMedico INT NOT NULL,
+  horaCita TIME NOT NULL,
   fechaCita DATE NOT NULL,
-  observaciones VARCHAR(200),
+  motivo VARCHAR(200),
+  cuenta VARCHAR(20),
+  quirofano VARCHAR(100),
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1,
@@ -58,12 +60,21 @@ CREATE TABLE Cita (
 -- Procedimientos almacenados para listar:
 CREATE PROC paPacienteListar @parametro VARCHAR(50)
 AS
-  SELECT id,cedulaIdentidad,nombres,apellidos,direccion,telefono,sexo,fechaNacimiento,usuarioRegistro,fechaRegistro,estado
+  SELECT id,cedulaIdentidad,nombres,apellidos,edad,direccion,telefono,sexo,usuarioRegistro,fechaRegistro,estado
   FROM Paciente
   WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
 CREATE PROC paMedicoListar @parametro VARCHAR(50)
 AS
-  SELECT id,cedulaIdentidad,nombres,apellidos,direccion,telefono,sexo,matriculaProfesional,fechaNacimiento,usuarioRegistro,fechaRegistro,estado
+  SELECT id,cedulaIdentidad,nombres,apellidos,direccion,telefono,sexo,matriculaProfesional,usuarioRegistro,fechaRegistro,estado
   FROM Medico
   WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro,' ','%')+'%';
+
+CREATE PROC paCitaListar @parametro VARCHAR(50)
+AS
+  SELECT Cita.id,idPaciente,idMedico,pa.cedulaIdentidad,pa.nombres,pa.apellidos,me.nombres,me.apellidos,Cita.horaCita,Cita.motivo,Cita.cuenta,
+  Cita.quirofano,usuarioRegistro,fechaRegistro,estado
+
+  FROM Cita INNER JOIN Paciente pa on idPaciente = pa.id
+  FROM Cita INNER JOIN Medico me on idMedico = me.id
+  WHERE estado<>-1 AND pa.cedulaIdentidad LIKE '%'+REPLACE(@parametro,' ','%')+'%';
