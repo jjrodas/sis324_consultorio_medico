@@ -21,7 +21,6 @@ namespace CadConsultorioMedico
         public int telefono { get; set; }
         public string sexo { get; set; }
         public string matriculaProfesional { get; set; }
-        public System.DateTime fechaNacimiento { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

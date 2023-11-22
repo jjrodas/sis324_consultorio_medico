@@ -12,7 +12,6 @@
     <Property Name="telefono" Type="int" Nullable="false" />
     <Property Name="sexo" Type="varchar" MaxLength="2" Nullable="false" />
     <Property Name="matriculaProfesional" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="fechaNacimiento" Type="date" Nullable="false" />
     <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
     <Property Name="estado" Type="smallint" Nullable="false" />
@@ -25,10 +24,10 @@
     <Property Name="cedulaIdentidad" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="nombres" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="apellidos" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="edad" Type="int" Nullable="false" />
     <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="telefono" Type="int" Nullable="false" />
     <Property Name="sexo" Type="varchar" MaxLength="2" Nullable="false" />
-    <Property Name="fechaNacimiento" Type="date" Nullable="false" />
     <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
     <Property Name="estado" Type="smallint" Nullable="false" />

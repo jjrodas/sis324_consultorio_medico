@@ -31,15 +31,6 @@ namespace CadConsultorioMedico
         public virtual DbSet<Paciente> Paciente { get; set; }
         public virtual DbSet<Medico> Medico { get; set; }
     
-        public virtual ObjectResult<paMedicoListar_Result> paMedicoListar(string parametro)
-        {
-            var parametroParameter = parametro != null ?
-                new ObjectParameter("parametro", parametro) :
-                new ObjectParameter("parametro", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paMedicoListar_Result>("paMedicoListar", parametroParameter);
-        }
-    
         public virtual ObjectResult<paPacienteListar_Result> paPacienteListar(string parametro)
         {
             var parametroParameter = parametro != null ?
@@ -47,6 +38,15 @@ namespace CadConsultorioMedico
                 new ObjectParameter("parametro", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paPacienteListar_Result>("paPacienteListar", parametroParameter);
+        }
+    
+        public virtual ObjectResult<paMedicoListar_Result> paMedicoListar(string parametro)
+        {
+            var parametroParameter = parametro != null ?
+                new ObjectParameter("parametro", parametro) :
+                new ObjectParameter("parametro", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<paMedicoListar_Result>("paMedicoListar", parametroParameter);
         }
     }
 }

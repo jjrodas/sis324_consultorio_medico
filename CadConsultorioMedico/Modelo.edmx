@@ -61,43 +61,16 @@
     <edmx:ConceptualModels>
       <Schema Namespace="ConsultorioMedicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ConsultorioMedicoEntities" annotation:LazyLoadingEnabled="true">
-          <FunctionImport Name="paMedicoListar" ReturnType="Collection(ConsultorioMedicoModel.paMedicoListar_Result)">
-          <Parameter Name="parametro" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="paPacienteListar" ReturnType="Collection(ConsultorioMedicoModel.paPacienteListar_Result)">
-          <Parameter Name="parametro" Mode="In" Type="String" />
-          </FunctionImport>
           <EntitySet Name="Usuario" EntityType="ConsultorioMedicoModel.Usuario" />
           <EntitySet Name="Paciente" EntityType="ConsultorioMedicoModel.Paciente" />
           <EntitySet Name="Medico" EntityType="ConsultorioMedicoModel.Medico" />
+          <FunctionImport Name="paPacienteListar" ReturnType="Collection(ConsultorioMedicoModel.paPacienteListar_Result)">
+          <Parameter Name="parametro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="paMedicoListar" ReturnType="Collection(ConsultorioMedicoModel.paMedicoListar_Result)">
+            <Parameter Name="parametro" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="paMedicoListar_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="direccion" Nullable="false" MaxLength="200" />
-          <Property Type="Int32" Name="telefono" Nullable="false" />
-          <Property Type="String" Name="sexo" Nullable="false" MaxLength="2" />
-          <Property Type="String" Name="matriculaProfesional" Nullable="false" MaxLength="10" />
-          <Property Type="DateTime" Name="fechaNacimiento" Nullable="false" />
-          <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
-          <Property Type="Int16" Name="estado" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="paPacienteListar_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
-          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
-          <Property Type="String" Name="direccion" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="telefono" Nullable="false" />
-          <Property Type="String" Name="sexo" Nullable="false" MaxLength="2" />
-          <Property Type="DateTime" Name="fechaNacimiento" Nullable="false" />
-          <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
-          <Property Type="Int16" Name="estado" Nullable="false" />
-        </ComplexType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="id" />
@@ -138,47 +111,38 @@
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="estado" Type="Int16" Nullable="false" />
         </EntityType>
+        <ComplexType Name="paPacienteListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="edad" Nullable="false" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="telefono" Nullable="false" />
+          <Property Type="String" Name="sexo" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
+          <Property Type="Int16" Name="estado" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="paMedicoListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="direccion" Nullable="false" MaxLength="200" />
+          <Property Type="Int32" Name="telefono" Nullable="false" />
+          <Property Type="String" Name="sexo" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="matriculaProfesional" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
+          <Property Type="Int16" Name="estado" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ConsultorioMedicoModelStoreContainer" CdmEntityContainer="ConsultorioMedicoEntities">
-          <FunctionImportMapping FunctionImportName="paMedicoListar" FunctionName="ConsultorioMedicoModel.Store.paMedicoListar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ConsultorioMedicoModel.paMedicoListar_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
-                <ScalarProperty Name="nombres" ColumnName="nombres" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="sexo" ColumnName="sexo" />
-                <ScalarProperty Name="matriculaProfesional" ColumnName="matriculaProfesional" />
-                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
-                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
-                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="paPacienteListar" FunctionName="ConsultorioMedicoModel.Store.paPacienteListar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ConsultorioMedicoModel.paPacienteListar_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
-                <ScalarProperty Name="nombres" ColumnName="nombres" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="sexo" ColumnName="sexo" />
-                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
-                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
-                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="ConsultorioMedicoModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
@@ -222,6 +186,40 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="paPacienteListar" FunctionName="ConsultorioMedicoModel.Store.paPacienteListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ConsultorioMedicoModel.paPacienteListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="paMedicoListar" FunctionName="ConsultorioMedicoModel.Store.paMedicoListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ConsultorioMedicoModel.paMedicoListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="matriculaProfesional" ColumnName="matriculaProfesional" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
