@@ -34,7 +34,6 @@ namespace CpConsultorioMedico
             dgvListaMedicos.Columns["telefono"].HeaderText = "N° de Teléfono";
             dgvListaMedicos.Columns["sexo"].HeaderText = "Sexo";
             dgvListaMedicos.Columns["matriculaProfesional"].HeaderText = "Matrícula Profesional";
-            dgvListaMedicos.Columns["fechaNacimiento"].HeaderText = "Fecha de nacimineto";
             dgvListaMedicos.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvListaMedicos.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
             btnEditar.Enabled = medicos.Count > 0;
@@ -75,7 +74,6 @@ namespace CpConsultorioMedico
             txtTelefono.Text = Convert.ToString(medico.telefono);
             cbxSexo.Text = medico.sexo;
             txtMatriculaProfesional.Text = medico.matriculaProfesional;
-            dtpFechaNacimiento.Value = medico.fechaNacimiento;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -108,7 +106,6 @@ namespace CpConsultorioMedico
             txtTelefono.Text = string.Empty;
             cbxSexo.SelectedIndex = -1;
             txtMatriculaProfesional.Text = string.Empty;
-            dtpFechaNacimiento.Text = string.Empty;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -131,7 +128,6 @@ namespace CpConsultorioMedico
             erpTelefono.SetError(txtTelefono, "");
             erpSexo.SetError(cbxSexo, "");
             erpMatriculaProfesional.SetError(txtMatriculaProfesional, "");
-            erpFechaNacimiento.SetError(dtpFechaNacimiento, "");
             if (string.IsNullOrEmpty(txtCedulaIdentidad.Text))
             {
                 esValido = false;
@@ -167,11 +163,6 @@ namespace CpConsultorioMedico
                 esValido = false;
                 erpMatriculaProfesional.SetError(txtTelefono, "El campo mátricula profesional del médico es obligatorio.");
             }
-            if (string.IsNullOrEmpty(dtpFechaNacimiento.Text))
-            {
-                esValido = false;
-                erpFechaNacimiento.SetError(dtpFechaNacimiento, "El campo fecha de nacimiento del médico es obligatorio");
-            }
             return esValido;
         }
 
@@ -187,7 +178,6 @@ namespace CpConsultorioMedico
                 medico.telefono = Convert.ToInt32(txtTelefono.Text);
                 medico.sexo = cbxSexo.Text.Trim();
                 medico.matriculaProfesional = txtMatriculaProfesional.Text.Trim();
-                medico.fechaNacimiento = dtpFechaNacimiento.Value;
                 medico.usuarioRegistro = "usrSIS324";
 
                 if (esNuevo)
@@ -228,6 +218,11 @@ namespace CpConsultorioMedico
         private void ptbMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblTelefono_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

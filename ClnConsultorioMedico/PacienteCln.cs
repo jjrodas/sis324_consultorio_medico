@@ -27,10 +27,10 @@ namespace ClnConsultorioMedico
                 existente.cedulaIdentidad = paciente.cedulaIdentidad;
                 existente.nombres = paciente.nombres;
                 existente.apellidos = paciente.apellidos;
+                existente.edad = paciente.edad;
                 existente.direccion = paciente.direccion;
                 existente.telefono = paciente.telefono;
                 existente.sexo = paciente.sexo;
-                existente.fechaNacimiento = paciente.fechaNacimiento;
                 existente.usuarioRegistro = paciente.usuarioRegistro;
                 existente.estado = paciente.estado;
                 return context.SaveChanges();

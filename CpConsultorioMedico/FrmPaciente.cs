@@ -30,10 +30,10 @@ namespace CpConsultorioMedico
             dgvListaPacientes.Columns["cedulaIdentidad"].HeaderText = "CI";
             dgvListaPacientes.Columns["nombres"].HeaderText = "Nombres";
             dgvListaPacientes.Columns["apellidos"].HeaderText = "Apellidos";
+            dgvListaPacientes.Columns["edad"].HeaderText = "Edad";
             dgvListaPacientes.Columns["direccion"].HeaderText = "Dirección";
             dgvListaPacientes.Columns["telefono"].HeaderText = "N° de Teléfono";
             dgvListaPacientes.Columns["sexo"].HeaderText = "Sexo";
-            dgvListaPacientes.Columns["fechaNacimiento"].HeaderText = "Fecha de nacimineto";
             dgvListaPacientes.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvListaPacientes.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
             btnEditar.Enabled = pacientes.Count > 0;
@@ -76,9 +76,9 @@ namespace CpConsultorioMedico
             txtNombres.Text = paciente.nombres;
             txtApellidos.Text = paciente.apellidos;
             txtDireccion.Text = paciente.direccion;
+            txtEdad.Text = Convert.ToString(paciente.edad);
             txtTelefono.Text = Convert.ToString(paciente.telefono);
             cbxSexo.Text = paciente.sexo;
-            dtpFechaNacimiento.Value = paciente.fechaNacimiento;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -107,10 +107,10 @@ namespace CpConsultorioMedico
             txtCedulaIdentidad.Text = string.Empty;
             txtNombres.Text = string.Empty;
             txtApellidos.Text = string.Empty;
+            txtEdad.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             cbxSexo.SelectedIndex = -1;
-            dtpFechaNacimiento.Text = string.Empty;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -129,10 +129,10 @@ namespace CpConsultorioMedico
             erpCedulaIdentidad.SetError(txtCedulaIdentidad, "");
             erpNombres.SetError(txtNombres, "");
             erpApellidos.SetError(txtApellidos, "");
+            erpEdad.SetError(txtEdad, "");
             erpDireccion.SetError(txtDireccion, "");
             erpTelefono.SetError(txtTelefono, "");
             erpSexo.SetError(cbxSexo, "");
-            erpFechaNacimiento.SetError(dtpFechaNacimiento, "");
             if (string.IsNullOrEmpty(txtCedulaIdentidad.Text))
             {
                 esValido = false;
@@ -148,7 +148,17 @@ namespace CpConsultorioMedico
                 esValido = false;
                 erpApellidos.SetError(txtApellidos, "El campo apellido o apellidos del paciente es obligatorio.");
             }
-            if (string.IsNullOrEmpty(txtNombres.Text))
+            if (string.IsNullOrEmpty(txtEdad.Text))
+            {
+                esValido = false;
+                erpEdad.SetError(txtEdad, "El campo edad del paciente es obligatorio.");
+            }
+            if (Convert.ToInt32(txtEdad.Text) < 18)
+            {
+                esValido = false;
+                erpEdad.SetError(txtEdad, "El paciente debe ser mayor de edad.");
+            }
+            if (string.IsNullOrEmpty(txtDireccion.Text))
             {
                 esValido = false;
                 erpDireccion.SetError(txtDireccion, "El campo dirección del paciente es obligatorio.");
@@ -163,11 +173,6 @@ namespace CpConsultorioMedico
                 esValido = false;
                 erpSexo.SetError(cbxSexo, "El campo sexo del paciente es obligatorio.");
             }
-            if (string.IsNullOrEmpty(dtpFechaNacimiento.Text))
-            {
-                esValido = false;
-                erpFechaNacimiento.SetError(dtpFechaNacimiento, "El campo fecha de nacimiento del paciente es obligatorio");
-            }
             return esValido;
         }
 
@@ -179,10 +184,10 @@ namespace CpConsultorioMedico
                 paciente.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
                 paciente.nombres = txtNombres.Text.Trim();
                 paciente.apellidos = txtApellidos.Text.Trim();
+                paciente.edad = Convert.ToInt32(txtEdad.Text);
                 paciente.direccion = txtDireccion.Text.Trim();
                 paciente.telefono = Convert.ToInt32(txtTelefono.Text);
                 paciente.sexo = cbxSexo.Text.Trim();
-                paciente.fechaNacimiento = dtpFechaNacimiento.Value;
                 paciente.usuarioRegistro = "UsrSIS324";
 
                 if (esNuevo)

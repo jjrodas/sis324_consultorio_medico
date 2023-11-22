@@ -32,7 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPaciente));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.lblEdad = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.cbxSexo = new System.Windows.Forms.ComboBox();
-            this.lblFechaNacimiento = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.txtCedulaIdentidad = new System.Windows.Forms.TextBox();
@@ -64,7 +64,6 @@
             this.erpDireccion = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpTelefono = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpSexo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.erpFechaNacimiento = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlBarraTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.ptbMinimizar = new System.Windows.Forms.PictureBox();
@@ -77,6 +76,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.erpEdad = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxDatos.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
             this.gbxListaPacientes.SuspendLayout();
@@ -87,17 +87,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.erpDireccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpTelefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpSexo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpFechaNacimiento)).BeginInit();
             this.pnlBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCerrar)).BeginInit();
             this.pnlMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEdad)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxDatos
             // 
-            this.gbxDatos.Controls.Add(this.dtpFechaNacimiento);
+            this.gbxDatos.Controls.Add(this.txtEdad);
+            this.gbxDatos.Controls.Add(this.lblEdad);
             this.gbxDatos.Controls.Add(this.txtTelefono);
             this.gbxDatos.Controls.Add(this.lblTelefono);
             this.gbxDatos.Controls.Add(this.txtDireccion);
@@ -105,7 +106,6 @@
             this.gbxDatos.Controls.Add(this.txtApellidos);
             this.gbxDatos.Controls.Add(this.lblApellidos);
             this.gbxDatos.Controls.Add(this.cbxSexo);
-            this.gbxDatos.Controls.Add(this.lblFechaNacimiento);
             this.gbxDatos.Controls.Add(this.lblSexo);
             this.gbxDatos.Controls.Add(this.txtNombres);
             this.gbxDatos.Controls.Add(this.txtCedulaIdentidad);
@@ -122,25 +122,34 @@
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Detalles de los pacientes";
             // 
-            // dtpFechaNacimiento
+            // txtEdad
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(526, 104);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(134, 26);
-            this.dtpFechaNacimiento.TabIndex = 38;
+            this.txtEdad.Location = new System.Drawing.Point(173, 144);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(163, 26);
+            this.txtEdad.TabIndex = 39;
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(24, 151);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(43, 18);
+            this.lblEdad.TabIndex = 38;
+            this.lblEdad.Text = "Edad:";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(526, 25);
+            this.txtTelefono.Location = new System.Drawing.Point(472, 60);
             this.txtTelefono.MaxLength = 250;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(134, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(163, 26);
             this.txtTelefono.TabIndex = 37;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(370, 32);
+            this.lblTelefono.Location = new System.Drawing.Point(368, 68);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(67, 18);
             this.lblTelefono.TabIndex = 36;
@@ -148,7 +157,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(173, 148);
+            this.txtDireccion.Location = new System.Drawing.Point(472, 23);
             this.txtDireccion.MaxLength = 250;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(163, 26);
@@ -157,7 +166,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(24, 155);
+            this.lblDireccion.Location = new System.Drawing.Point(368, 31);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(70, 18);
             this.lblDireccion.TabIndex = 34;
@@ -186,24 +195,15 @@
             this.cbxSexo.Items.AddRange(new object[] {
             "F",
             "M"});
-            this.cbxSexo.Location = new System.Drawing.Point(526, 62);
+            this.cbxSexo.Location = new System.Drawing.Point(472, 99);
             this.cbxSexo.Name = "cbxSexo";
-            this.cbxSexo.Size = new System.Drawing.Size(134, 26);
+            this.cbxSexo.Size = new System.Drawing.Size(164, 26);
             this.cbxSexo.TabIndex = 31;
-            // 
-            // lblFechaNacimiento
-            // 
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(370, 111);
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(145, 18);
-            this.lblFechaNacimiento.TabIndex = 30;
-            this.lblFechaNacimiento.Text = "Fecha de Naciemiento:";
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(370, 70);
+            this.lblSexo.Location = new System.Drawing.Point(371, 103);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(43, 18);
             this.lblSexo.TabIndex = 26;
@@ -431,10 +431,6 @@
             // 
             this.erpSexo.ContainerControl = this;
             // 
-            // erpFechaNacimiento
-            // 
-            this.erpFechaNacimiento.ContainerControl = this;
-            // 
             // pnlBarraTitulo
             // 
             this.pnlBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -588,6 +584,10 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // erpEdad
+            // 
+            this.erpEdad.ContainerControl = this;
+            // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,13 +619,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.erpDireccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpTelefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpSexo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpFechaNacimiento)).EndInit();
             this.pnlBarraTitulo.ResumeLayout(false);
             this.pnlBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCerrar)).EndInit();
             this.pnlMenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEdad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,7 +635,6 @@
 
         private System.Windows.Forms.GroupBox gbxDatos;
         private System.Windows.Forms.ComboBox cbxSexo;
-        private System.Windows.Forms.Label lblFechaNacimiento;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.TextBox txtCedulaIdentidad;
@@ -659,14 +658,12 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label lblApellidos;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.ErrorProvider erpCedulaIdentidad;
         private System.Windows.Forms.ErrorProvider erpNombres;
         private System.Windows.Forms.ErrorProvider erpApellidos;
         private System.Windows.Forms.ErrorProvider erpDireccion;
         private System.Windows.Forms.ErrorProvider erpTelefono;
         private System.Windows.Forms.ErrorProvider erpSexo;
-        private System.Windows.Forms.ErrorProvider erpFechaNacimiento;
         private System.Windows.Forms.Panel pnlBarraTitulo;
         private System.Windows.Forms.PictureBox ptbMinimizar;
         private System.Windows.Forms.PictureBox ptbCerrar;
@@ -679,6 +676,9 @@
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.ErrorProvider erpEdad;
     }
 }
 

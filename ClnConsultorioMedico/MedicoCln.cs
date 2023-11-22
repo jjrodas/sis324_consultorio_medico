@@ -31,7 +31,6 @@ namespace ClnConsultorioMedico
                 existente.telefono = medico.telefono;
                 existente.sexo = medico.sexo;
                 existente.matriculaProfesional = medico.matriculaProfesional;
-                existente.fechaNacimiento = medico.fechaNacimiento;
                 existente.usuarioRegistro = medico.usuarioRegistro;
                 existente.estado = medico.estado;
                 return context.SaveChanges();
