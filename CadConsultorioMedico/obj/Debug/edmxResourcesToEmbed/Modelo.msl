@@ -78,5 +78,22 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="Cita">
+      <EntityTypeMapping TypeName="ConsultorioMedicoModel.Cita">
+        <MappingFragment StoreEntitySet="Cita">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="quirofano" ColumnName="quirofano" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="motivo" ColumnName="motivo" />
+          <ScalarProperty Name="fechaCita" ColumnName="fechaCita" />
+          <ScalarProperty Name="horaCita" ColumnName="horaCita" />
+          <ScalarProperty Name="idMedico" ColumnName="idMedico" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -10,6 +10,15 @@
     <FunctionImport Name="paMedicoListar" ReturnType="Collection(ConsultorioMedicoModel.paMedicoListar_Result)">
       <Parameter Name="parametro" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="Cita" EntityType="ConsultorioMedicoModel.Cita" />
+    <AssociationSet Name="fk_Cita_Medico" Association="ConsultorioMedicoModel.fk_Cita_Medico">
+      <End Role="Medico" EntitySet="Medico" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Cita_Paciente" Association="ConsultorioMedicoModel.fk_Cita_Paciente">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuario">
     <Key>
@@ -34,6 +43,7 @@
     <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Cita" Relationship="ConsultorioMedicoModel.fk_Cita_Paciente" FromRole="Paciente" ToRole="Cita" />
   </EntityType>
   <EntityType Name="Medico">
     <Key>
@@ -50,6 +60,7 @@
     <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Cita" Relationship="ConsultorioMedicoModel.fk_Cita_Medico" FromRole="Medico" ToRole="Cita" />
   </EntityType>
   <ComplexType Name="paPacienteListar_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
@@ -77,4 +88,46 @@
     <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
     <Property Type="Int16" Name="estado" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPaciente" Type="Int32" Nullable="false" />
+    <Property Name="idMedico" Type="Int32" Nullable="false" />
+    <Property Name="horaCita" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="fechaCita" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="motivo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="quirofano" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Medico" Relationship="ConsultorioMedicoModel.fk_Cita_Medico" FromRole="Cita" ToRole="Medico" />
+    <NavigationProperty Name="Paciente" Relationship="ConsultorioMedicoModel.fk_Cita_Paciente" FromRole="Cita" ToRole="Paciente" />
+  </EntityType>
+  <Association Name="fk_Cita_Medico">
+    <End Type="ConsultorioMedicoModel.Medico" Role="Medico" Multiplicity="1" />
+    <End Type="ConsultorioMedicoModel.Cita" Role="Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medico">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="idMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Cita_Paciente">
+    <End Type="ConsultorioMedicoModel.Paciente" Role="Paciente" Multiplicity="1" />
+    <End Type="ConsultorioMedicoModel.Cita" Role="Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="idPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

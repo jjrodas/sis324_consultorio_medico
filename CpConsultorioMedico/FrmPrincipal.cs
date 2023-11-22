@@ -45,5 +45,11 @@ namespace CpConsultorioMedico
         {
             frmAutenticacion.Visible = true;
         }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            new FrmCita(this).ShowDialog();
+        }
     }
 }

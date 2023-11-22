@@ -8,6 +8,9 @@
         <EntityTypeShape EntityType="ConsultorioMedicoModel.Usuario" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="ConsultorioMedicoModel.Paciente" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="ConsultorioMedicoModel.Medico" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ConsultorioMedicoModel.Cita" Width="1.5" PointX="5.625" PointY="0.75" />
+        <AssociationConnector Association="ConsultorioMedicoModel.fk_Cita_Medico" />
+        <AssociationConnector Association="ConsultorioMedicoModel.fk_Cita_Paciente" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

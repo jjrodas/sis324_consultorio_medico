@@ -12,27 +12,21 @@ namespace CadConsultorioMedico
     using System;
     using System.Collections.Generic;
     
-    public partial class Paciente
+    public partial class Cita
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Paciente()
-        {
-            this.Cita = new HashSet<Cita>();
-        }
-    
         public int id { get; set; }
-        public string cedulaIdentidad { get; set; }
-        public string nombres { get; set; }
-        public string apellidos { get; set; }
-        public int edad { get; set; }
-        public string direccion { get; set; }
-        public int telefono { get; set; }
-        public string sexo { get; set; }
+        public int idPaciente { get; set; }
+        public int idMedico { get; set; }
+        public System.TimeSpan horaCita { get; set; }
+        public System.DateTime fechaCita { get; set; }
+        public string motivo { get; set; }
+        public string cuenta { get; set; }
+        public string quirofano { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cita> Cita { get; set; }
+        public virtual Medico Medico { get; set; }
+        public virtual Paciente Paciente { get; set; }
     }
 }

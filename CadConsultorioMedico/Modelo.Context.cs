@@ -30,6 +30,7 @@ namespace CadConsultorioMedico
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Paciente> Paciente { get; set; }
         public virtual DbSet<Medico> Medico { get; set; }
+        public virtual DbSet<Cita> Cita { get; set; }
     
         public virtual ObjectResult<paPacienteListar_Result> paPacienteListar(string parametro)
         {

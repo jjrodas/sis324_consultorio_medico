@@ -14,6 +14,12 @@ namespace CadConsultorioMedico
     
     public partial class Medico
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Medico()
+        {
+            this.Cita = new HashSet<Cita>();
+        }
+    
         public int id { get; set; }
         public string cedulaIdentidad { get; set; }
         public string nombres { get; set; }
@@ -25,5 +31,8 @@ namespace CadConsultorioMedico
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cita> Cita { get; set; }
     }
 }

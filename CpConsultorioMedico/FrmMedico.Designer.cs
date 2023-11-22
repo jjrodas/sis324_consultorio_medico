@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedico));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.txtMatriculaProfesional = new System.Windows.Forms.TextBox();
             this.lblMatriculaProfesional = new System.Windows.Forms.Label();
@@ -128,7 +128,7 @@
             this.txtMatriculaProfesional.MaxLength = 250;
             this.txtMatriculaProfesional.Name = "txtMatriculaProfesional";
             this.txtMatriculaProfesional.Size = new System.Drawing.Size(135, 26);
-            this.txtMatriculaProfesional.TabIndex = 40;
+            this.txtMatriculaProfesional.TabIndex = 6;
             // 
             // lblMatriculaProfesional
             // 
@@ -145,7 +145,7 @@
             this.txtTelefono.MaxLength = 250;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(135, 26);
-            this.txtTelefono.TabIndex = 37;
+            this.txtTelefono.TabIndex = 4;
             // 
             // lblTelefono
             // 
@@ -163,7 +163,7 @@
             this.txtDireccion.MaxLength = 250;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(155, 26);
-            this.txtDireccion.TabIndex = 35;
+            this.txtDireccion.TabIndex = 3;
             // 
             // lblDireccion
             // 
@@ -180,7 +180,7 @@
             this.txtApellidos.MaxLength = 250;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(155, 26);
-            this.txtApellidos.TabIndex = 33;
+            this.txtApellidos.TabIndex = 2;
             // 
             // lblApellidos
             // 
@@ -200,7 +200,7 @@
             this.cbxSexo.Location = new System.Drawing.Point(518, 59);
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(135, 26);
-            this.cbxSexo.TabIndex = 31;
+            this.cbxSexo.TabIndex = 5;
             // 
             // lblSexo
             // 
@@ -217,7 +217,7 @@
             this.txtNombres.MaxLength = 250;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(155, 26);
-            this.txtNombres.TabIndex = 25;
+            this.txtNombres.TabIndex = 1;
             // 
             // txtCedulaIdentidad
             // 
@@ -225,7 +225,7 @@
             this.txtCedulaIdentidad.MaxLength = 250;
             this.txtCedulaIdentidad.Name = "txtCedulaIdentidad";
             this.txtCedulaIdentidad.Size = new System.Drawing.Size(155, 26);
-            this.txtCedulaIdentidad.TabIndex = 24;
+            this.txtCedulaIdentidad.TabIndex = 0;
             // 
             // lblNombres
             // 
@@ -255,6 +255,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 42);
             this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -270,6 +271,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(95, 42);
             this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.TabStop = false;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -295,6 +297,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(87, 42);
             this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.TabStop = false;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -310,6 +313,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(93, 42);
             this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabStop = false;
             this.btnEliminar.Text = "Eliminar Médico";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -318,14 +322,15 @@
             // btnEditar
             // 
             this.btnEditar.Enabled = false;
-            this.btnEditar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(162, 3);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(87, 42);
             this.btnEditar.TabIndex = 8;
-            this.btnEditar.Text = "Editar Médico";
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Text = "Editar \r\nMédico";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -339,6 +344,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(91, 42);
             this.btnNuevo.TabIndex = 7;
+            this.btnNuevo.TabStop = false;
             this.btnNuevo.Text = "Nuevo Médico";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -370,8 +376,8 @@
             this.dgvListaMedicos.Name = "dgvListaMedicos";
             this.dgvListaMedicos.ReadOnly = true;
             this.dgvListaMedicos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvListaMedicos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgvListaMedicos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaMedicos.Size = new System.Drawing.Size(683, 182);
             this.dgvListaMedicos.TabIndex = 1;
@@ -525,6 +531,7 @@
             this.btnCitas.TabIndex = 5;
             this.btnCitas.Text = "Citas";
             this.btnCitas.UseVisualStyleBackColor = false;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // panel2
             // 

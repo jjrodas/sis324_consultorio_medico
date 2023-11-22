@@ -72,9 +72,9 @@ AS
 
 CREATE PROC paCitaListar @parametro VARCHAR(50)
 AS
-  SELECT Cita.id,idPaciente,idMedico,pa.cedulaIdentidad,pa.nombres,pa.apellidos,me.nombres,me.apellidos,Cita.horaCita,Cita.motivo,Cita.cuenta,
-  Cita.quirofano,usuarioRegistro,fechaRegistro,estado
+  SELECT Cita.id,idPaciente,idMedico,pa.cedulaIdentidad,pa.nombres,pa.apellidos,me.nombres,me.apellidos,
+  Cita.horaCita,Cita.motivo,Cita.cuenta,
+  Cita.quirofano,Cita.usuarioRegistro,Cita.fechaRegistro,Cita.estado
 
-  FROM Cita INNER JOIN Paciente pa on idPaciente = pa.id
-  FROM Cita INNER JOIN Medico me on idMedico = me.id
-  WHERE estado<>-1 AND pa.cedulaIdentidad LIKE '%'+REPLACE(@parametro,' ','%')+'%';
+  FROM Cita INNER JOIN Paciente pa on idPaciente = pa.id INNER JOIN Medico me on idMedico = me.id
+  WHERE Cita.estado<>-1 AND pa.cedulaIdentidad LIKE '%'+REPLACE(@parametro,' ','%')+'%';

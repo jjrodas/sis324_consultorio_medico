@@ -224,5 +224,10 @@ namespace CpConsultorioMedico
         {
 
         }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            new FrmCita(frmPrincipal).ShowDialog();
+        }
     }
 }
