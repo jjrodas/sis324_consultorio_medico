@@ -1,0 +1,12 @@
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\CadConsultorioMedico.dll.config
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\CadConsultorioMedico.dll
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\CadConsultorioMedico.pdb
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\EntityFramework.dll
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\EntityFramework.xml
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\obj\Release\CadConsultorioMedico.csproj.AssemblyReference.cache
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\obj\Release\CadConsultorioMedico.csproj.CoreCompileInputs.cache
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\obj\Release\CadConsultorioMedico.csproj.CopyComplete
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\obj\Release\CadConsultorioMedico.dll
+C:\Users\jota\Desktop\Consultorio Medico\CadConsultorioMedico\obj\Release\CadConsultorioMedico.pdb
